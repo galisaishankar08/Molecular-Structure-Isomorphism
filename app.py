@@ -1,10 +1,5 @@
 from flask import *
-from rdkit import Chem
-from rdkit.Chem import Draw
-from urllib.request import urlopen
-from urllib.parse import quote
-from pysmiles import read_smiles
-import networkx as nx
+
 
 app = Flask(__name__)
 
