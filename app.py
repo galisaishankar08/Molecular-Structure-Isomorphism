@@ -31,25 +31,10 @@ def isomorphic():
                 return ans
             except:
                 return 'Did not work'
-
-
-        def adj_matrix(c_name1, c_name2):
-            s_formula1 = CIR_convert(c_name1)
-            s_formula2 = CIR_convert(c_name2)
-
-            Draw.MolToFile(Chem.MolFromSmiles(s_formula1), './static/mol_img_1.png')
-            Draw.MolToFile(Chem.MolFromSmiles(s_formula2), './static/mol_img_2.png')
-
-            mol_1 = read_smiles(s_formula1)
-            mol_2 = read_smiles(s_formula2)
-
-            # adjacency matrix
-            adj_matrix_c1 = nx.to_numpy_matrix(mol_1)
-            adj_matrix_c2 = nx.to_numpy_matrix(mol_2)
-
-            return adj_matrix_c1, adj_matrix_c2
+            
+        s_formula1 = CIR_convert(mol1)
         
-        res = mol1
+        res = s_formula1
         return render_template("result.html", result=res)
 
 if __name__ == '__main__':
