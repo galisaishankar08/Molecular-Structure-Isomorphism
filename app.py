@@ -53,7 +53,7 @@ def isomorphic():
             mol2_url = 'https://cactus.nci.nih.gov/chemical/structure/'+mol2+'/image'
 
             if GM.is_isomorphic():
-                res = ['Isomorphic',mol1,mol2]
+                res = ['Isomorphic',mol1,mol2,mol1_url,mol2_url]
             else:
                 res = ['Not Isomorphic',mol1,mol2,mol1_url,mol2_url]
 
