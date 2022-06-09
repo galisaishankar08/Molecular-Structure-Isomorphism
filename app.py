@@ -48,16 +48,19 @@ def isomorphic():
             G1 = nx.from_numpy_matrix(adj_matrix_c1)
             G2 = nx.from_numpy_matrix(adj_matrix_c2)
             GM = isomorphism.GraphMatcher(G1, G2)
+            
+            mol1_url = 'https://cactus.nci.nih.gov/chemical/structure/'+mol1+'/image'
+            mol2_url = 'https://cactus.nci.nih.gov/chemical/structure/'+mol2+'/image'
 
             if GM.is_isomorphic():
                 res = ['Isomorphic',mol1,mol2]
             else:
-                res = ['Not Isomorphic',mol1,mol2]
+                res = ['Not Isomorphic',mol1,mol2,mol1_url,mol2_url]
 
             return render_template("result.html", result=res)
         
         else:
-            return render_template('index.html')
+            return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)
