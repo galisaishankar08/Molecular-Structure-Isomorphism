@@ -11,6 +11,14 @@ from networkx.algorithms import isomorphism
 
 app = Flask(__name__)
 
+def CIR_convert(ids):
+    try:
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+        ans = urlopen(url).read().decode('utf8')
+        return ans
+    except:
+        return 'Did not work'
+
 
 @app.route('/')
 def index():
