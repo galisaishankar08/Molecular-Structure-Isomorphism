@@ -38,22 +38,21 @@ def isomorphic():
         s_formula1 = CIR_convert(mol1)
         s_formula2 = CIR_convert(mol2)
         
-        adj_matrix_c1 = np.array([[0, 1, 0, 0, 0],
-                          [1, 0, 1, 0, 1],
-                          [0, 1, 0, 1, 1],
-                          [0, 0, 1, 0, 1],
-                          [0, 1, 1, 1, 0]])
-
-        adj_matrix_c2 = np.array([[0, 1, 1, 1, 0],
-                          [1, 0, 1, 0, 0],
-                          [1, 1, 0, 1, 0],
-                          [1, 0, 1, 0, 1],
-                          [0, 0, 0, 1, 0]])
+        mol_1_obj = read_smiles(s_formula1)
+        mol_2_obj = read_smiles(s_formula2)
+        
+        adj_matrix_c1 = nx.to_numpy_matrix(mol_1_obj)
+        adj_matrix_c2 = nx.to_numpy_matrix(mol_2_obj)
+        
         G1 = nx.from_numpy_matrix(adj_matrix_c1)
         G2 = nx.from_numpy_matrix(adj_matrix_c2)
         GM = isomorphism.GraphMatcher(G1, G2)
         
-        res = s_formula1
+        if GM.is_isomorphic():
+            res = 'Isomorphic'
+        else:
+            res = 'Not Isomorphic'
+            
         return render_template("result.html", result=res)
 
 if __name__ == '__main__':
