@@ -35,8 +35,8 @@ def isomorphic():
         mol1 = request.form["cname1"]
         mol2 = request.form["cname2"]
         
-        s_formula1 = CIR_convert(c_name1)
-        s_formula2 = CIR_convert(c_name2)
+        s_formula1 = CIR_convert(mol1)
+        s_formula2 = CIR_convert(mol2)
         
         adj_matrix_c1 = np.array([[0, 1, 0, 0, 0],
                           [1, 0, 1, 0, 1],
