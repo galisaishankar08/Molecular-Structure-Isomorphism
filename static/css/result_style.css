@@ -1,46 +1,104 @@
-body {
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-h1 {
-  color: '#000547';
-}
-.title{
-  position: absolute;
-  left: 450px;
-  top: 75px;
-  font-size: 250%;
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+    body {
+      background-image: url("../images/background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    header{
+      align-content: center;
+    }
+    .title{
+      font-size: 250%;
+    }
+    
+    .container{
+        margin : auto;
+        align-content: center;
+        height: 70vh;
+        width: 32%;
+        border: 5px solid black;
+        border-radius: 10%;
+    }
+    
+    h1{
+        color: '#000547';
+        text-align: center;
+    }
+    
+    img{
+        margin : 10px 30px 10px 10px;
+        height: 150px;
+        width: 150px;
+    }
+    .main-div{
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+    }
+    
+    h2{
+      color: '#000547';
+      text-align: center;
+    }
+    
+    button  {
+        margin: 10px 0px 0px 100px;
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(6, 99, 202);
+        font-size: 16px;
+    }
 }
 
-.container{
-    margin : 200px 5px 100px 450px;
-    height: 42vh;
-    width: 29%;
+@media screen and (max-device-width: 640px) {
+  body {
+    background: linear-gradient(to right , #08AAFF,#00FF6C);
+  }
+  header{
+    align-content: center;
+  }
+  .title{
+    font-size: 250%;
+  }
+  .container{
+    margin : auto;
+    margin-top: 150px;
+    padding-bottom: 30px;
+    align-content: center;
+    text-align: center;  
+    height: 40%;
+    width: 80%;
     border: 5px solid black;
-    padding: 30px;
     border-radius: 10%;
-}
+  }
 
-h1{
+  h1{
+      color: '#000547';
+      text-align: center;
+  }
+  img{
+    margin : 10px 30px 10px 10px;
+    height: 300px;
+    width: 300px;
+  }
+  .main-div{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+  h2{
     color: '#000547';
     text-align: center;
-}
-
-img{
-    margin : 20px 30px 10px 10px;
-    height: 150px;
-    width: 150px;
-}
-.mol{
-  dispaly: flex;
-  flex-direction: row;
-}
-
-button  {
-    margin: 10px 10px 10px 100px;
-    width: 200px;
-    padding: 10px;
-    background-color: rgb(6, 99, 202);
-    font-size: 16px;
+  }
+  
+  button  {
+      width: 200px;
+      padding: 10px;
+      background-color: rgb(6, 99, 202);
+      font-size: 16px;
+  }
 }
