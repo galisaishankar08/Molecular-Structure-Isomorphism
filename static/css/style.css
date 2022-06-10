@@ -1,44 +1,91 @@
-body {
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-h1 {
-  color: '#000547';
-}
-.title{
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+    body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    }
+    h1 {
     color: '#000547';
-    position: absolute;
-    left: 450px;
-    top: 75px;
-    font-size: 250%;
-}
+    }
+    .title{
+        color: '#000547';
+        position: absolute;
+        left: 425px;
+        top: 60px;
+        font-size: 250%;
+    }
 
-.container{
-    margin : 200px 5px 100px 450px;
-    height: 42vh;
-    width: 29%;
-    border: 5px solid black;
-    padding: 50px;
-    border-radius: 10%;
-    display:flex;
-    justify-content: center;
-    align-content: center;
-}
+    .container{
+        margin : 175px 5px 100px 450px;
+        height: 42vh;
+        width: 29%;
+        border: 5px solid black;
+        padding: 50px;
+        border-radius: 10%;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+    }
 
-input   {
-    margin: 20px 10px 10px 0;
-    padding: 10px;
-}
-.label  {
-    font-size:xx-large;
-    color: rgb(0, 0, 0);
-}
+    input   {
+        margin: 20px 10px 10px 0;
+        padding: 10px;
+    }
+    .label  {
+        font-size:xx-large;
+        color: rgb(0, 0, 0);
+    }
 
-button  {
-    margin: 20px 10px 10px 50px;
-    width: 200px;
-    padding: 10px;
-    background-color: rgb(6, 99, 202);
-    font-size: 16px;
-}
+    button  {
+        margin: 20px 10px 10px 50px;
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(6, 99, 202);
+        font-size: 16px;
+    }
+  }
+
+@media screen and (max-device-width: 640px) {
+    body {
+        background: linear-gradient(to right , #08AAFF,#00FF6C);
+    }
+    header{
+      text-align: center;
+    }
+    .title{
+      font-size: 250%;
+    }
+    .container{
+        margin : auto;
+        margin-top: 100px;
+        height: 60%;
+        width: 60%;
+        border: 5px solid black;
+        padding: 50px;
+        border-radius: 10%;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    input   {
+        margin: 20px 10px 10px 0;
+        padding: 10px;
+    }
+    .label  {
+        font-size:xx-large;
+        color: rgb(0, 0, 0);
+    }
+
+    button  {
+        margin: 20px 10px 10px 50px;
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(6, 99, 202);
+        font-size: 16px;
+    }
+  }
