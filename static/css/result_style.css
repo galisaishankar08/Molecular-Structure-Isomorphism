@@ -18,7 +18,7 @@ h1 {
     height: 42vh;
     width: 29%;
     border: 5px solid black;
-    padding: 50px;
+    padding: 30px;
     border-radius: 10%;
 }
 
@@ -31,6 +31,10 @@ img{
     margin : 20px 30px 10px 10px;
     height: 150px;
     width: 150px;
+}
+.mol{
+  dispaly: flex;
+  flex-direction: row;
 }
 
 button  {
