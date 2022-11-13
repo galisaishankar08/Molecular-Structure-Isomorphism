@@ -61,6 +61,29 @@ def isomorphic():
         
         else:
             return redirect('/')
+        
+@app.route('/api', methods=['GET', 'POST'], strict_slashes=False)
+def api():
+    print(jsonify(request.json))
+    if request.json['cname1']and request.json['cname2']:
+        mol1 = str(request.json['cname1'])
+        mol2 = str(request.json['cname2'])
+        
+        s_formula1 = CIR_convert(mol1)
+        s_formula2 = CIR_convert(mol2)
+        
+        if s_formula1 !='Did not work' and s_formula2 !='Did not work':
+            mol_1_obj = read_smiles(s_formula1)
+            mol_2_obj = read_smiles(s_formula2)
+
+            adj_matrix_c1, adj_matrix_c2 = nx.to_numpy_matrix(mol_1_obj), nx.to_numpy_matrix(mol_2_obj)
+            if GraphMatcher(adj_matrix_c1, adj_matrix_c2):
+                return 'Isomorphic'
+            else:
+                return 'Not Isomorphic'
+        else:
+            return "Error"
+    return "Error"
 
 if __name__ == '__main__':
     app.run(debug=True)
