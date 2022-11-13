@@ -77,7 +77,12 @@ def api():
             mol_2_obj = read_smiles(s_formula2)
 
             adj_matrix_c1, adj_matrix_c2 = nx.to_numpy_matrix(mol_1_obj), nx.to_numpy_matrix(mol_2_obj)
-            if GraphMatcher(adj_matrix_c1, adj_matrix_c2):
+
+            G1 = nx.from_numpy_matrix(adj_matrix_c1)
+            G2 = nx.from_numpy_matrix(adj_matrix_c2)
+            GM = isomorphism.GraphMatcher(G1, G2)
+
+            if GM.is_isomorphic():
                 return 'Isomorphic'
             else:
                 return 'Not Isomorphic'
