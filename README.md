@@ -95,6 +95,9 @@ Here’s how the comparison is performed step-by-step between two molecules (sho
 ## 🧑‍💻 Authors
 
 * **Gali Sai Shankar**
+* **Medhilesh**
+* **Aumesh**
+* **Krishna Ajay**
 * Collaborators and contributors welcome!
 
 ---
